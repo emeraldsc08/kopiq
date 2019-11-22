@@ -24,8 +24,8 @@
                             <h6 class="heading-small text-muted mb-4">{{ __('supplier information') }}</h6>
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('nama') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-nama">{{ __('nama') }}</label>
-                                    <input type="text" name="nama" id="input-nama" class="form-control form-control-alternative{{ $errors->has('nama') ? ' is-invalid' : '' }}" placeholder="{{ __('nama') }}" value="{{ old('nama') }}" required autofocus>
+                                    <label class="form-control-label" for="input-nama">{{ __('Name') }}</label>
+                                    <input type="text" name="nama" id="input-nama" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Enter Name') }}" value="{{ old('nama') }}" required autofocus>
 
                                     @if ($errors->has('nama'))
                                         <span class="invalid-feedback" role="alert">
@@ -34,8 +34,8 @@
                                     @endif
                                 </div>
                                 <div class="form-group{{ $errors->has('alamat') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-alamat">{{ __('alamat') }}</label>
-                                    <input type="text" name="alamat" id="input-alamat" class="form-control form-control-alternative{{ $errors->has('alamat') ? ' is-invalid' : '' }}" placeholder="{{ __('alamat') }}" value="{{ old('alamat') }}" required>
+                                    <label class="form-control-label" for="input-alamat">{{ __('Alamat') }}</label>
+                                    <input type="text" name="alamat" id="input-alamat" class="form-control form-control-alternative{{ $errors->has('alamat') ? ' is-invalid' : '' }}" placeholder="{{ __('Enter Address') }}" value="{{ old('address') }}" required>
 
                                     @if ($errors->has('alamat'))
                                         <span class="invalid-feedback" role="alert">
@@ -44,8 +44,8 @@
                                     @endif
                                 </div>
                                 <div class="form-group{{ $errors->has('nomorHp') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-nomorHp">{{ __('Nomor HP') }}</label>
-                                    <input type="text" name="nomorHp" id="input-nomorHp" class="form-control form-control-alternative{{ $errors->has('nomorHp') ? ' is-invalid' : '' }}" placeholder="{{ __('Nomor Hp') }}" value="{{ old('nomorHp') }}" required>
+                                    <label class="form-control-label" for="input-nomorHp">{{ __('Phone Number') }}</label>
+                                    <input type="text" name="nomorHp" id="input-nomorHp" class="form-control form-control-alternative{{ $errors->has('nomorHp') ? ' is-invalid' : '' }}" placeholder="{{ __('Enter Phone Number') }}" value="{{ old('nomorHp') }}" required>
 
                                     @if ($errors->has('nomorHp'))
                                         <span class="invalid-feedback" role="alert">

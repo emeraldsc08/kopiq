@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\Http\Requests\UserRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -14,6 +14,11 @@ class UserController extends Controller
      * @param  \App\User  $model
      * @return \Illuminate\View\View
      */
+    public function getAll(User $model)
+    {
+        return User::all();
+    }
+
     public function index(User $model)
     {
         return view('users.index', ['users' => $model->paginate(15)]);
@@ -36,10 +41,9 @@ class UserController extends Controller
      * @param  \App\User  $model
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(UserRequest $request, User $model)
+    public function store(Request $request, User $model)
     {
-        $model->create($request->merge(['password' => Hash::make($request->get('password'))])->all());
-
+        User::create($request->all());
         return redirect()->route('user.index')->withStatus(__('User successfully created.'));
     }
 

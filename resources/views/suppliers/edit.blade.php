@@ -25,7 +25,7 @@
                             <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('nama') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-nama">{{ __('nama') }}</label>
+                                    <label class="form-control-label" for="input-nama">{{ __('Nama') }}</label>
                                     <input type="text" name="nama" id="input-nama" class="form-control form-control-alternative{{ $errors->has('nama') ? ' is-invalid' : '' }}" placeholder="{{ __('nama') }}" value="{{ $supplier->nama }}" required autofocus>
 
                                     @if ($errors->has('nama'))
@@ -35,7 +35,7 @@
                                     @endif
                                 </div>
                                 <div class="form-group{{ $errors->has('alamat') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-alamat">{{ __('alamat') }}</label>
+                                    <label class="form-control-label" for="input-alamat">{{ __('Alamat') }}</label>
                                     <input type="text" name="alamat" id="input-alamat" class="form-control form-control-alternative{{ $errors->has('alamat') ? ' is-invalid' : '' }}" placeholder="{{ __('Alamat') }}" value="{{ $supplier->alamat }}" required>
 
                                     @if ($errors->has('alamat'))
