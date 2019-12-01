@@ -17,6 +17,7 @@ class CreateTypesTable extends Migration
             $table->increments('id');
             $table->integer('id_supplier')->unsigned()->nullable();
             $table->string('nama');
+            $table->integer('stock');
             $table->string('description');
             $table->timestamps();
 

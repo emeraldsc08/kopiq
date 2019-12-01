@@ -85,14 +85,10 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('type.index') }}">
-                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Type') }}
+                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Raw Material') }}
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('storage.index') }}">
-                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Storages') }}
-                    </a>
-                </li>
+
 
                 <li class="nav-item">
                     <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
@@ -120,11 +116,11 @@
                         <i class="ni ni-planet text-blue"></i> {{ __('Tambah Kopi') }}
                     </a>
                 </li>
-                
+
             </ul>
-            
-            
-            
+
+
+
         </div>
     </div>
 </nav>

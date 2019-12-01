@@ -10,14 +10,17 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">{{ __('Type') }}</h3>
+                                <h3 class="mb-0">{{ __('Raw Material') }}</h3>
                             </div>
+
+
                             <div class="col-4 text-right">
                                 <a href="{{ route('type.create') }}" class="btn btn-sm btn-primary">{{ __('Add Type') }}</a>
                             </div>
+
                         </div>
                     </div>
-                    
+
                     <div class="col-12">
                         @if (session('status'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -35,6 +38,7 @@
                                 <tr>
                                     <th scope="col">{{ __('Name') }}</th>
                                     <th scope="col">{{ __('Supplier') }}</th>
+                                    <th scope="col">{{ __('Stock(gr)') }}</th>
                                     <th scope="col">{{ __('Description') }}</th>
                                     <th scope="col">{{ __('Creation Date') }}</th>
                                     <th scope="col"></th>
@@ -44,10 +48,14 @@
                                 @foreach ($types as $type)
                                     <tr>
                                         <td>{{ $type->nama }}</td>
-                                        <!-- <td>
-                                            <a href="mailto:{{ $type->alamat }}">{{ $type->id_supplier }}</a>
-                                        </td> -->
-                                        <td>{{ $type->id_supplier}}</td>
+
+
+                                        <td >{{ $type->supplier->nama   }}</td>
+
+
+                                        <td >{{ $type->stock}} gr</td>
+
+
                                         <td>{{ $type->description }}</td>
                                         <td>{{ $type->created_at->format('d/m/Y H:i') }}</td>
                                         <td class="text-right">
@@ -59,12 +67,12 @@
                                                         <form action="{{ route('type.destroy', $type) }}" method="post">
                                                             @csrf
                                                             @method('delete')
-                                                            
+
                                                             <a class="dropdown-item" href="{{ route('type.edit', $type) }}">{{ __('Edit') }}</a>
                                                             <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this type?") }}') ? this.parentElement.submit() : ''">
                                                                 {{ __('Delete') }}
                                                             </button>
-                                                        </form>    
+                                                        </form>
                                                 </div>
                                             </div>
                                         </td>
@@ -81,7 +89,7 @@
                 </div>
             </div>
         </div>
-            
+
         @include('layouts.footers.auth')
     </div>
 @endsection

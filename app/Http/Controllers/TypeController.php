@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Type;
+use App\Supplier;
+use App\Exports\PesananExport;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Hash;
 
 class TypeController extends Controller
@@ -15,7 +18,8 @@ class TypeController extends Controller
      */
     public function index(type $model)
     {
-        return view('types.index', ['types' => $model->paginate(15)]);
+        $types = Type::with('supplier')->get();
+        return view('types.index', ['types' => $model->paginate(15)], compact('types'));
     }
 
     /**
@@ -25,7 +29,8 @@ class TypeController extends Controller
      */
     public function create()
     {
-        return view('types.create');
+        $suppliers = Supplier::all();
+        return view('types.create', compact( 'suppliers'));
     }
 
     /**
@@ -37,9 +42,14 @@ class TypeController extends Controller
      */
     public function store(Request $request, type $model)
     {
-        
-        Type::create($request->all());
+        // $type = new Type();
+        // $type->nama = $request->input('nama');
+        // $type->stock = $request->input('stock');
+        // $type->id_supplier = $request->input('supplier');
+        // $type->description = $request->input('description');
+        // $type->save();
 
+        Type::create($request->all());
         return redirect()->route('type.index')->withStatus(__('type successfully created.'));
     }
 
@@ -51,7 +61,8 @@ class TypeController extends Controller
      */
     public function edit(type $type)
     {
-        return view('types.edit', compact('type'));
+        $suppliers = Supplier::all();
+        return view('types.edit', compact('type', 'suppliers'));
     }
 
     /**
@@ -63,8 +74,9 @@ class TypeController extends Controller
      */
     public function update(Request $request, type  $type)
     {
-        $type->update($request->all());
 
+
+        $type->update($request->all());
         return redirect()->route('type.index')->withStatus(__('type successfully updated.'));
     }
 
@@ -79,5 +91,14 @@ class TypeController extends Controller
         $type->delete();
 
         return redirect()->route('type.index')->withStatus(__('type successfully deleted.'));
+    }
+    public function exportToExcel()
+    {
+        return Excel::download(new PesananExport, 'Type.xlsx');
+    }
+    public function getWithJson($id)
+    {
+        $type = Type::where('id', $id)->with('supplier')->first();
+        return response()->json($type);
     }
 }

@@ -17,7 +17,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-12">
                         @if (session('status'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -43,7 +43,7 @@
                             <tbody>
                                 @foreach ($suppliers as $user)
                                     <tr>
-                                        <td>{{ $user->nama }}</td>
+                                        <td> {{ $user->nama }}</td>
                                         <td>
                                             <a href="mailto:{{ $user->alamat }}">{{ $user->alamat }}</a>
                                         </td>
@@ -58,12 +58,12 @@
                                                         <form action="{{ route('supplier.destroy', $user) }}" method="post">
                                                             @csrf
                                                             @method('delete')
-                                                            
+
                                                             <a class="dropdown-item" href="{{ route('supplier.edit', $user) }}">{{ __('Edit') }}</a>
                                                             <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this user?") }}') ? this.parentElement.submit() : ''">
                                                                 {{ __('Delete') }}
                                                             </button>
-                                                        </form>    
+                                                        </form>
                                                 </div>
                                             </div>
                                         </td>
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-            
+
         @include('layouts.footers.auth')
     </div>
 @endsection

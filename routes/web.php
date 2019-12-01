@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,14 +9,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
@@ -25,6 +21,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 	Route::resource('supplier', 'SupplierController', ['except' => ['show']]);
 	Route::resource('menu', 'MenuController', ['except' => ['show']]);
-	Route::resource('type', 'TypeController', ['except' => ['show']]);
-	Route::resource('storage', 'StorageController', ['except' => ['show']]);
+    Route::resource('type', 'TypeController', ['except' => ['show']]);
+    Route::get('type/create/{id_supplier}', 'TypeController@create');
+    Route::get('/download-report', 'PesananController@exportToExcel');
+	
 });

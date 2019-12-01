@@ -35,7 +35,6 @@
                                 <tr>
                                     <th scope="col">{{ __('Name') }}</th>
                                     <th scope="col">{{ __('Email') }}</th>
-                                    <th scope="col">{{ __('Status') }}</th>
                                     <th scope="col">{{ __('Creation Date') }}</th>
                                     <th scope="col"></th>
                                 </tr>
@@ -47,7 +46,6 @@
                                         <td>
                                             <a href="mailto:{{ $user->email }}">{{ $user->email }}</a>
                                         </td>
-                                        <td>{{ $user->status }}</td>
                                         <td>{{ $user->created_at->format('d/m/Y H:i') }}</td>
                                         <td class="text-right">
                                             <div class="dropdown">
@@ -55,6 +53,7 @@
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                                    @if ($user->id != auth()->id())
                                                         <form action="{{ route('user.destroy', $user) }}" method="post">
                                                             @csrf
                                                             @method('delete')
@@ -64,7 +63,9 @@
                                                                 {{ __('Delete') }}
                                                             </button>
                                                         </form>    
-
+                                                    @else
+                                                        <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('Edit') }}</a>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </td>

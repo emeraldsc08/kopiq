@@ -8,4 +8,5 @@ class Supplier extends Model
 {
     //
     protected $guarded = [];
+
 }
