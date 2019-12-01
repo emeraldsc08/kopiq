@@ -15,12 +15,10 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_menu')->unsigned();
-            $table->integer('jumlah');
+            $table->string('nama_pemesan');
             $table->timestamps();
 
-            $table->foreign('id_menu')->references('id')->on('menus')
-            ->onDelete('cascade')->onUpdate('cascade');
+
         });
     }
 

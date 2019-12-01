@@ -88,6 +88,16 @@
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Raw Material') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="##">
+                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Order') }}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="##">
+                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Transaction') }}
+                    </a>
+                </li>
 
 
                 <li class="nav-item">
