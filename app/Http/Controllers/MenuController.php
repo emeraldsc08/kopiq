@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Menu;
+use App\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -15,7 +16,8 @@ class MenuController extends Controller
      */
     public function index(menu $model)
     {
-        return view('menus.index', ['menus' => $model->paginate(15)]);
+        $menus = Menu::with('type')->get();
+        return view('menus.index', ['menus' => $model->paginate(15)], compact('menus'));
     }
 
     /**
@@ -25,7 +27,8 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('menus.create');
+        $types = Type::all();
+        return view('menus.create', compact('types'));
     }
 
     /**
@@ -37,7 +40,7 @@ class MenuController extends Controller
      */
     public function store(Request $request, menu $model)
     {
-        
+
         Menu::create($request->all());
 
         return redirect()->route('menu.index')->withStatus(__('menu successfully created.'));
@@ -51,7 +54,8 @@ class MenuController extends Controller
      */
     public function edit(menu $menu)
     {
-        return view('menus.edit', compact('menu'));
+        $types = Type::all();
+        return view('menus.edit', compact('menu', 'types'));
     }
 
     /**

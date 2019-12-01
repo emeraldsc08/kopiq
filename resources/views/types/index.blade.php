@@ -38,7 +38,7 @@
                                 <tr>
                                     <th scope="col">{{ __('Name') }}</th>
                                     <th scope="col">{{ __('Supplier') }}</th>
-                                    <th scope="col">{{ __('Stock(gr)') }}</th>
+                                    <th scope="col">{{ __('Stock (Gram)') }}</th>
                                     <th scope="col">{{ __('Description') }}</th>
                                     <th scope="col">{{ __('Creation Date') }}</th>
                                     <th scope="col"></th>

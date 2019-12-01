@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('Menu Management')])
 
 @section('content')
-    @include('users.partials.header', ['title' => __('Edit Menu')])   
+    @include('users.partials.header', ['title' => __('Edit Menu')])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -26,7 +26,8 @@
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Name') }}</label>
-                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('ex : PT Atur Kopi') }}" value="{{ $menu->name }}" required autofocus>
+                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                    placeholder="{{ __('Enter Name') }}" value="{{ $menu->name }}" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -34,9 +35,22 @@
                                         </span>
                                     @endif
                                 </div>
+                                <div class="form-group">
+                                    <label for="">Raw Material</label>
+                                    <select name="id_type" id="" class="form-control">
+                                        <option value="{{ $menu->id_type }}">{{ $menu->type->nama }}</option>
+                                        @foreach ($types as $t)
+                                            @if ($t->id != $menu->id_type)
+                                                <option value="{{ $t->id }}">{{ $t->nama }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <div class="form-group{{ $errors->has('jumlah_bahan') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-jumlah_bahan">{{ __('Amount Of Ingridients') }}</label>
-                                    <input type="text" name="jumlah_bahan" id="input-jumlah_bahan" class="form-control form-control-alternative{{ $errors->has('jumlah_bahan') ? ' is-invalid' : '' }}" placeholder="{{ __('ex : 20') }}" value="{{ $menu->jumlah_bahan }}" required autofocus>
+                                    <label class="form-control-label" for="input-jumlah_bahan">{{ __('Amount Of Ingridients (Gram)') }}</label>
+                                    <input type="number" name="jumlah_bahan" id="input-jumlah_bahan"
+                                    class="form-control form-control-alternative{{ $errors->has('jumlah_bahan') ? ' is-invalid' : '' }}"
+                                    placeholder="{{ __('Amount Of Ingridients') }}" value="{{ $menu->jumlah_bahan }}" required autofocus>
 
                                     @if ($errors->has('jumlah_bahan'))
                                         <span class="invalid-feedback" role="alert">
@@ -46,7 +60,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('price') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-price">{{ __('Price (Rp)') }}</label>
-                                    <input type="text" name="price" id="input-price" class="form-control form-control-alternative{{ $errors->has('price') ? ' is-invalid' : '' }}" placeholder="{{ __('ex : 100000') }}" value="{{ $menu->price }}" required autofocus>
+                                    <input type="number" name="price" id="input-price" class="form-control form-control-alternative{{ $errors->has('price') ? ' is-invalid' : '' }}" placeholder="{{ __('ex : 100000') }}" value="{{ $menu->price }}" required autofocus>
 
                                     @if ($errors->has('price'))
                                         <span class="invalid-feedback" role="alert">
@@ -54,8 +68,8 @@
                                         </span>
                                     @endif
                                 </div>
-                                
-                               
+
+
 
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
@@ -66,7 +80,7 @@
                 </div>
             </div>
         </div>
-        
+
         @include('layouts.footers.auth')
     </div>
 @endsection
