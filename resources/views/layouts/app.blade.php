@@ -19,9 +19,12 @@
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
         <link type="text/css" href="{{ asset('argon') }}/css/util.css?v=1.0.0" rel="stylesheet">
         <link type="text/css" href="{{ asset('argon') }}/css/main.css?v=1.0.0" rel="stylesheet">
+        <link type="text/css" href="{{ asset('argon') }}/css/creative.min.css?v=1.0.0" rel="stylesheet">
         <!-- vendor -->
         <link type="text/css" href="{{ asset('argon') }}vendor/select2/select2.min.css" rel="stylesheet">
         <link type="text/css" href="{{ asset('argon') }}vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet">
+        <link type="text/css" href="{{ asset('argon') }}vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+        <link type="text/css" href="{{ asset('argon') }}vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
     </head>
     <body class="{{ $class ?? '' }}">

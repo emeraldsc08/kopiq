@@ -19142,6 +19142,7 @@ textarea[resize='horizontal']
 {
     max-width: 100%;
     max-height: 5rem;
+    
 }
 @media (min-width: 768px)
 {
@@ -19477,6 +19478,17 @@ textarea[resize='horizontal']
     .navbar-vertical.navbar-expand-sm .navbar-brand-img
     {
         max-height: 2.5rem;
+    }
+    .navbar-vertical.navbar-expand-sm .navbar-user
+    {
+        margin-right: -1.5rem;
+        margin-left: -1.5rem;
+        padding-top: 1rem;
+        padding-right: 1.5rem;
+        padding-bottom: 0rem;
+        padding-left: 1.5rem;
+
+        border-top: 1px solid #e9ecef;
     }
     .navbar-vertical.navbar-expand-sm .navbar-user
     {
