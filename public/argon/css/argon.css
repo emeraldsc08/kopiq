@@ -3321,7 +3321,7 @@ fieldset:disabled a.btn
 .show > .btn-default.dropdown-toggle
 {
     color: #fff;
-    border-color: #172b4d;
+    border-color: #ffffff;
     background-color: #0b1526;
 }
 .btn-default:not(:disabled):not(.disabled):active:focus,
@@ -7940,7 +7940,7 @@ button.bg-primary:focus
 
 .bg-secondary
 {
-    background-color: #f7fafc !important;
+    background-color: #f3f3f3 !important;
 }
 
 a.bg-secondary:hover,
@@ -7948,7 +7948,7 @@ a.bg-secondary:focus,
 button.bg-secondary:hover,
 button.bg-secondary:focus
 {
-    background-color: #d2e3ee !important;
+    background-color: #9ca1a5 !important;
 }
 
 .bg-success
@@ -8031,7 +8031,7 @@ button.bg-dark:focus
 
 .bg-default
 {
-    background-color: #172b4d !important;
+    background-color: #fff !important;
 }
 
 a.bg-default:hover,
@@ -15542,7 +15542,7 @@ button.section-darker:focus
 
 .fill-default
 {
-    fill: #172b4d;
+    fill: #fff;
 }
 
 .stroke-default
@@ -16899,7 +16899,7 @@ a.text-lighter:focus
 
 .btn-neutral
 {
-    color: #5e72e4;
+    color: #4b3c12;
 }
 
 .btn-icon .btn-inner--icon img
@@ -19003,7 +19003,7 @@ textarea[resize='horizontal']
 }
 .navbar-horizontal .navbar-brand img
 {
-    height: 30px;
+    height: 75px;
 }
 
 .navbar-horizontal .navbar-dark .navbar-brand
@@ -20147,7 +20147,7 @@ textarea[resize='horizontal']
     }
     .navbar-collapse .collapse-brand img
     {
-        height: 36px;
+        height: 50px;
     }
     .navbar-collapse .collapse-close
     {

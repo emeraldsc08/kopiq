@@ -24,5 +24,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('type', 'TypeController', ['except' => ['show']]);
     Route::get('type/create/{id_supplier}', 'TypeController@create');
     Route::get('/download-report', 'PesananController@exportToExcel');
-	
+
 });

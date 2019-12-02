@@ -17,6 +17,12 @@
         <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
+        <link type="text/css" href="{{ asset('argon') }}/css/util.css?v=1.0.0" rel="stylesheet">
+        <link type="text/css" href="{{ asset('argon') }}/css/main.css?v=1.0.0" rel="stylesheet">
+        <!-- vendor -->
+        <link type="text/css" href="{{ asset('argon') }}vendor/select2/select2.min.css" rel="stylesheet">
+        <link type="text/css" href="{{ asset('argon') }}vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet">
+
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -25,7 +31,7 @@
             </form>
             @include('layouts.navbars.sidebar')
         @endauth
-        
+
         <div class="main-content">
             @include('layouts.navbars.navbar')
             @yield('content')
@@ -37,10 +43,16 @@
 
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        
+        <script src="{{ asset('argon') }}/vendor/jquery/jquery-3.2.1.min.js"></script>
+        <script src="{{ asset('argon') }}/vendor/bootstrap/js/popper.js"></script>
+        <script src="{{ asset('argon') }}/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="{{ asset('argon') }}/vendor/select2/select2.min.js"></script>
+        <script src="{{ asset('argon') }}/vendor/tilt/tilt.jquery.min.js"></script>
+
         @stack('js')
-        
+
         <!-- Argon JS -->
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
+
     </body>
 </html>

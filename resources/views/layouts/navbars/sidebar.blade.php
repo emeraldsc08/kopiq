@@ -24,7 +24,7 @@
                     </div>
                     <a href="{{ route('profile.edit') }}" class="dropdown-item">
                         <i class="ni ni-single-02"></i>
-                        <span>{{ __('My profile') }}</span>
+                        <span>{{ auth()->user()->name }}</span>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <!-- Form -->
-            <form class="mt-4 mb-3 d-md-none">
+            <!-- <form class="mt-4 mb-3 d-md-none">
                 <div class="input-group input-group-rounded input-group-merge">
                     <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="{{ __('Search') }}" aria-label="Search">
                     <div class="input-group-prepend">
@@ -63,9 +63,9 @@
                         </div>
                     </div>
                 </div>
-            </form>
+            </form> -->
             <!-- Divider -->
-            <hr class="my-3">
+            <!-- <hr class="my-3"> -->
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -96,34 +96,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="##">
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Transaction') }}
-                    </a>
-                </li>
-
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
-                        <!-- <i class="fab fa-laravel" style="color: #f4645f;"></i> -->
-                        <span class="nav-link-text" style="color: #f4645f;">{{ __('Supplier') }}</span>
-                    </a>
-                    <div class="collapse show" id="navbar-examples">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile.edit') }}">
-                                    {{ __('Supplier Data') }}
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.index') }}">
-                                    {{ __('Add Supplier') }}
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-planet text-blue"></i> {{ __('Tambah Kopi') }}
                     </a>
                 </li>
 
